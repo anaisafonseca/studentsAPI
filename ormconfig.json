@@ -1,0 +1,11 @@
+{
+    "type": "postgres",
+    "host": "database",
+    "port": 5432,
+    "username": "postgres",
+    "password": "262472",
+    "database": "asa-tarefa1",
+    "entities": ["build/models/**.js"],
+    "synchronize": true,
+    "logging": true
+}

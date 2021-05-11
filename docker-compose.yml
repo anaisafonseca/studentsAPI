@@ -1,0 +1,20 @@
+version: "3"
+services: 
+  database:
+    image: postgres
+    ports: 
+      - "5432:5432"
+    environment: 
+      - POSTGRES_PASSWORD=262472
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=asa-tarefa1
+  tarefa1:
+    depends_on: 
+      - "database"
+    restart: on-failure
+    build: .
+    ports: 
+      - "3333:3333"
+    links: 
+      - "database"
+    command: npm start

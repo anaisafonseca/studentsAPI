@@ -1,0 +1,23 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.router = void 0;
+const express_1 = require("express");
+const classController_1 = require("./controller/classController");
+const gradeController_1 = require("./controller/gradeController");
+const studentController_1 = require("./controller/studentController");
+const studentController = new studentController_1.StudentController();
+const classController = new classController_1.ClassController();
+const gradeController = new gradeController_1.GradeController();
+const router = express_1.Router();
+exports.router = router;
+router.post('/students', studentController.create);
+router.put('/students', studentController.update);
+router.delete('/students', studentController.delete);
+router.get('/students', studentController.list);
+router.post('/classes', classController.create);
+router.put('/classes', classController.update);
+router.delete('/classes', classController.delete);
+router.get('/classes', classController.list);
+router.post('/grades', gradeController.create);
+router.post('/reports', gradeController.list);
+//# sourceMappingURL=routes.js.map
